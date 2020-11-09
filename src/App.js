@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Navbar from './components/navbar.component.js';
+import EmployeeList from './components/employee-list.component.js';
+import ViewEmployee from './components/view-employee.component.js';
+import CreateEmployee from './components/create-employee.component.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div class="container">
+      <Navbar />
+      <br/>
+      <Route path = '/api/employee' exact component = {EmployeeList} />
+      <Route path = '/api/employee/:id' exact component = {ViewEmployee} />
+      <CreateEmployee />
+      {/* <Route path = '/api/add' exact component = {CreateEmployee} /> */}
     </div>
+    </Router>
   );
 }
 
