@@ -3,8 +3,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const employeesRouter = require('./routes/api.js');
 
-require('dotenv').config();
-
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -25,7 +23,10 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 });
 
-app.use('/employees', employeesRouter);
+
+// routes
+app.use(require("./routes/api.js"));
+
 
 
 

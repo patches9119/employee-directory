@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Employee = require('../models/employee.js');
+const Employee = require('../models/employee.js');
 
 router.route('/api/employee').get((req, res) => {
     Employee.find({})
@@ -21,7 +21,7 @@ router.route('/api/employee/:id').get(({body, params}, res) => {
         })
 })
 
-router.route('/api/add').post((req, res) => {
+router.route('/api/add').post(({body}, res) => {
     Employee.create(body)
         .then(dbEmployee => {
             res.json(dbEmployee);

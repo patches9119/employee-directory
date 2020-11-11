@@ -38,15 +38,18 @@ export default class CreateEmployee extends Component {
 
         console.log(employee);
 
-        axios.post('http://localhost:5000/employee/add', employee)
+        axios.post('http://localhost:5000/api/add', employee)
           .then(res => {
             console.log(res.data);
+          })
+          .catch(err => {
+            console.log(err);
           })
 
         this.setState({
           first_name: '',
           last_name: '',
-          office: 0,
+          office: "",
           email: ""
         });
       

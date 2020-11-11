@@ -15,7 +15,7 @@ const employeeSchema = new Schema(
       required: "Enter a last name for this employee"
     },
     office: {
-      type: Number,
+      type: String,
       required: "Enter an office number"
     },
     email: {
