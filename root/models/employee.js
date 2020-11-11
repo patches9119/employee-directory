@@ -4,10 +4,15 @@ const Schema = mongoose.Schema;
 
 const employeeSchema = new Schema(
   {
-    name: {
+    first_name: {
       type: String,
       trim: true,
-      required: "Enter a name for this employee"
+      required: "Enter a first name for this employee"
+    },
+    last_name: {
+      type: String,
+      trim: true,
+      required: "Enter a last name for this employee"
     },
     office: {
       type: Number,
