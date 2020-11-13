@@ -54,14 +54,19 @@ export default class CreateEmployee extends Component {
         });
       
 
-        // window.location = '/';
+        window.location = '/';
     };
 
+    
 
 
     render() {
+      const divstyle = {
+        width: '100%',
+        height: '100%'
+      }
         return ( 
-    <div>
+    <div style={divstyle}>
       <h3>Create New Employee</h3>
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
@@ -106,7 +111,7 @@ export default class CreateEmployee extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Create Employee" className="btn btn-primary" />
+          <input type="submit" value="Create Employee" className="btn btn-secondary" />
         </div>
       </form>
     </div>
