@@ -43,7 +43,7 @@ export default class employeeSearch extends Component {
 
         console.log(`You searched for ${this.state.search}`);
 
-        axios.get('http://localhost:5000/api/employee')
+        axios.get('/api/employee')
             .then(res => {
                 var test = [];
                 var test2 = [];

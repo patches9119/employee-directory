@@ -22,7 +22,7 @@ export default class EmployeeList extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/employee')
+        axios.get('/api/employee')
             .then(res => {
                 console.log(res.data);
                 this.setState({employees: res.data});

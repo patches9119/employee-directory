@@ -38,7 +38,7 @@ export default class CreateEmployee extends Component {
 
         console.log(employee);
 
-        axios.post('http://localhost:5000/api/add', employee)
+        axios.post('/api/add', employee)
           .then(res => {
             console.log(res.data);
           })
