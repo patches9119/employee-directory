@@ -52,6 +52,8 @@ export default class CreateEmployee extends Component {
           office: "",
           email: ""
         });
+
+        alert("Employee Successfully Added!");
       
 
         window.location = '/';

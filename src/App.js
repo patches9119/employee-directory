@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from './components/navbar.component.js';
 import EmployeeList from './components/employee-list.component.js';
-// import ViewEmployee from './components/view-employee.component.js';
 import CreateEmployee from './components/create-employee.component.js';
 import HomePage from './components/home-page.componont.js';
+import employeeSearch from'./components/employee-search.component.js';
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
       <Navbar />
       <br/>
       <Route path= '/' exact component = {HomePage} />
-      <Route path = '/api/employee' exact component = {EmployeeList} />
-      {/* <Route path = '/api/employee/:id' exact component = {ViewEmployee} /> */}
-      <Route path = '/api/add' exact component = {CreateEmployee} />
+      <Route path = '/employees' exact component = {EmployeeList} />
+      <Route path = '/add' exact component = {CreateEmployee} />
+      <Route path = '/search' exact component = {employeeSearch} />
     </div>
     </Router>
   );

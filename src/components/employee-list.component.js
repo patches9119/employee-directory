@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ViewEmployee from './view-employee.component.js';
-import searchBar from './search-bar.component.js';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
 // import Employee from '../../root/models/employee.js';
@@ -39,15 +38,22 @@ export default class EmployeeList extends Component {
         })
     }
 
-    viewEmployee(id) {
-        console.log("view has been pushed")
-    }
-
     render() {
         return ( 
             <div>
             <h3>Current Employees</h3>
-            <searchBar />
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort By:
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">Action</button>
+                    <button class="dropdown-item" type="button">Another action</button>
+                    <button class="dropdown-item" type="button">Something else here</button>
+                </div>
+            </div>
+            <div style={{margin:"1rem"}}>
+            </div>
             <table className="table">
                 <thead className="thead-light">
                     <tr>
@@ -62,7 +68,6 @@ export default class EmployeeList extends Component {
                     { this.employeeList() }
                 </tbody>
             </table>
-            <ViewEmployee />
             </div>
         )
     }

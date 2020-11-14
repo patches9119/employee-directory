@@ -8,8 +8,9 @@ export default class Navbar extends Component {
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
                 <a href="#top"><img src={company} title="company"/></a>
                 <Link to='/' className="navbar-brand">Home</Link>
-                <Link to="/api/employee" className='navbar-brand'>Employee List</Link>
-                <Link to="/api/add" className='navbar-brand'>Create Employee</Link>
+                <Link to="/employees" className='navbar-brand'>Employee List</Link>
+                <Link to="/add" className='navbar-brand'>Create Employee</Link>
+                <Link to='/search' className="navbar-brand">Employee Search</Link>
             </nav>
         )
     }
