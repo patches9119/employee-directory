@@ -15,7 +15,7 @@ This is the first prototype for a typical employee directory. Built from scratch
 You will have to run npm install in both the root directory and the client directory for the application to work. You will also have to create your own either local or remote mongo server for the application to use.
 
 Concurrently was giving me some issue that I didn't feel like fixing at the time so for the time being 'npm start' does not work. Instead you will have to have two command lines open. One will have to be open in the root directory where you will run
-`npm run build`
+`node server.js`
 
 The other will be open in the client directory where you can run
 `npm start`
