@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ViewEmployee from './view-employee.component.js';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
 // import Employee from '../../root/models/employee.js';
@@ -38,36 +37,55 @@ export default class EmployeeList extends Component {
         })
     }
 
+    sortArray(employees) {
+        return employees.sort((a,b) => {
+            let fa = a.first_name.toLowerCase(),
+            fb = b.first_name.toLowerCase();
+    
+        if (fa < fb) {
+            return -1;
+        }
+        if (fa > fb) {
+            return 1;
+        }
+        return 0;
+        });
+    }
+
+    sortEmployees = event => {
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        event.preventDefault();
+
+        var oldList = this.state.employees;
+
+        var newList = this.sortArray(oldList);
+
+        console.log(newList);
+
+        this.setState({employees: newList});
+    }
+
     render() {
         return ( 
             <div>
-            <h3>Current Employees</h3>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort By:
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">Action</button>
-                    <button class="dropdown-item" type="button">Another action</button>
-                    <button class="dropdown-item" type="button">Something else here</button>
+                <h3>Current Employees</h3>
+                <input onClick={this.sortEmployees} value="Sort by First Name" className="btn btn-secondary" />
+                <div style={{margin:"1rem"}}>
                 </div>
-            </div>
-            <div style={{margin:"1rem"}}>
-            </div>
-            <table className="table">
-                <thead className="thead-light">
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Office</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { this.employeeList() }
-                </tbody>
-            </table>
+                <table className="table">
+                    <thead className="thead-light">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Office</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { this.employeeList() }
+                    </tbody>
+                </table>
             </div>
         )
     }
